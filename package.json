@@ -2,9 +2,10 @@
   "name": "student-control",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {   
+  "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.3"
   },
@@ -21,7 +22,6 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "web-vitals": "^2.1.4"
-
   },
   "scripts": {
     "start": "react-scripts start",

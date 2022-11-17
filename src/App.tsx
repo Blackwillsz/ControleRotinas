@@ -1,15 +1,15 @@
 import './App.css';
 import AppBar from "./components/AppBar";
-
-
-import StudentForm from "./components/Student-Form";
+import { BrowserRouter } from 'react-router-dom'
+import { AppRouter } from './routes';
 
 export const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
       <AppBar />
-      
-    </div>
+      <AppRouter />
+    </BrowserRouter>
+    
   );
 }
 
