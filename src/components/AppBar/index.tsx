@@ -22,7 +22,7 @@ export default function Appbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Student Controller
+            WOS Controller
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
