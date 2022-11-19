@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
-
-import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
+import { Avatar, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { Icon } from '@mui/material';
+import { useAppDrawerContext } from '../../contexts';
 
 interface IMenuLateralProps {
   children: React.ReactNode
@@ -10,15 +9,17 @@ interface IMenuLateralProps {
 
 export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const { isDrawerOpen, toggleDrawerOpen } = useAppDrawerContext();
 
   return (
     <>
-      <Drawer open={true} variant='permanent'>
+      <Drawer open={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
         <Box width={theme.spacing(24)} height="100%" display="flex" flexDirection="column">
 
           <Box width="100%" height={theme.spacing(18)} display="flex" alignItems="center" justifyContent="center">
             <Avatar
-              sx={{ height: theme.spacing(12), width: theme.spacing(12)}}
+              sx={{ height: theme.spacing(12), width: theme.spacing(12) }}
               src="https://observatoriodegames.uol.com.br/wp-content/uploads/2020/05/bloodborne-1024x640.jpg"
             />
           </Box>
@@ -31,14 +32,14 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
                 <Icon>home</Icon>
                 <ListItemText primary="Página Inicial" />
               </ListItemButton>
-            
-            </List>                        
+
+            </List>
 
           </Box>
-          
+
         </Box>
       </Drawer>
-      <Box height="100vh" marginLeft={theme.spacing(24)}>
+      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(24)}>
         {children}
       </Box>
     </>
