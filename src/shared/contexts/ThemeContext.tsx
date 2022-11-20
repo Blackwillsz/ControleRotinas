@@ -12,7 +12,7 @@ const ThemeContext = createContext({} as IThemeContextData);
 
 export const useAppThemeContext = () => {
   return useContext(ThemeContext);
-}
+};
 
 interface IAppThemeProviderProps {
   children: React.ReactNode

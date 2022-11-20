@@ -8,10 +8,12 @@
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
-    "overrides": [],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
         "sourceType": "module"
     },
     "plugins": [
