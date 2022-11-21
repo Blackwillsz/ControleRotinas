@@ -1,3 +1,4 @@
+import { FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 
 interface IDashboardProps {
@@ -7,9 +8,14 @@ interface IDashboardProps {
 export const Dashboard = () => {
 
   return (
-    <LayoutBaseDePagina titulo='Página Inicial' barraDeFerramentas={<>Ferramentas</>}>
+    <LayoutBaseDePagina
+      titulo='Página Inicial'
+      barraDeFerramentas={(
+        <FerramentasDeDetalhe mostrarBotaoSalvarEFechar/>
+      )}>
 
       Testando
+
     </LayoutBaseDePagina>
   );
 };
