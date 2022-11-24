@@ -1,5 +1,6 @@
 import { Box, Button, Icon, InputAdornment, Paper, TextField, useTheme } from '@mui/material';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+
+import { Environment } from '../../environment';
 
 
 interface IFerramentasDaListagem {
@@ -33,7 +34,7 @@ export const FerramentasDaListagem: React.FC<IFerramentasDaListagem> = ({
       component={Paper}
     >
       {mostrarImputBusca && (
-        <TextField size="small" placeholder="Pesquisar..."
+        <TextField size="small" placeholder={Environment.INPUT_DE_BUSCA}
           value={textoDaBusca}
           onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
           InputProps={{
